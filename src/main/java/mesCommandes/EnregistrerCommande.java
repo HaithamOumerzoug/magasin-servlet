@@ -61,7 +61,7 @@ public class EnregistrerCommande extends HttpServlet {
 	protected void OuvreBase() {
 		try {
 		Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/invoncmd_magasin?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","invoncmd_root","wOM^BWs$.d~o");
+			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/magasin?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
 			connexion.setAutoCommit(true);
 			stmt = connexion.createStatement();
 		}
