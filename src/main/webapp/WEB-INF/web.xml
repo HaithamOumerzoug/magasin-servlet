@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+	<display-name>TpServlet</display-name>
+	<welcome-file-list>
+	    <welcome-file>index.html</welcome-file>
+	    <welcome-file>index.htm</welcome-file>
+	    <welcome-file>index.jsp</welcome-file>
+	    <welcome-file>default.html</welcome-file>
+	    <welcome-file>default.htm</welcome-file>
+	    <welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<filter>
+		<filter-name>portier</filter-name>
+		<filter-class>mesCommandes.FiltreAutorisation</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>portier</filter-name>
+		<servlet-name>acheter</servlet-name>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>portier</filter-name>
+		<servlet-name>commander</servlet-name>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>portier</filter-name>
+		<servlet-name>enregistrer</servlet-name>
+	</filter-mapping>
+	<filter>
+		<filter-name>initial</filter-name>
+		<filter-class>mesCommandes.FiltrerechercheNom</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>initial</filter-name>
+		<servlet-name>acheter</servlet-name>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>initial</filter-name>
+		<servlet-name>commander</servlet-name>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>initial</filter-name>
+		<servlet-name>enregistrer</servlet-name>
+	</filter-mapping>
+	
+	<servlet>
+	 	<servlet-name>inscrire</servlet-name>
+	 	<servlet-class>mesCommandes.InscriptionClient</servlet-class>
+	</servlet>
+	 
+	<servlet-mapping>
+	 	<servlet-name>inscrire</servlet-name>
+	 	<url-pattern>/servlet/sinscrire</url-pattern>
+	</servlet-mapping>
+	 
+	<servlet>
+	 	<servlet-name>acheter</servlet-name>
+	 	<servlet-class>mesCommandes.AfficherLesDisques</servlet-class>
+	</servlet>
+	 
+	<servlet-mapping>
+	 	<servlet-name>acheter</servlet-name>
+	 	<url-pattern>/servlet/achat</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	 	<servlet-name>commander</servlet-name>
+	 	<servlet-class>mesCommandes.CommanderUnDisque</servlet-class>
+	</servlet>
+	 
+	<servlet-mapping>
+	 	<servlet-name>commander</servlet-name>
+	 	<url-pattern>/servlet/commande</url-pattern>
+	</servlet-mapping>
+	 
+	<servlet>
+	 	<servlet-name>enregistrer</servlet-name>
+	 	<servlet-class>mesCommandes.EnregistrerCommande</servlet-class>
+	</servlet>
+	 
+	<servlet-mapping>
+	 	<servlet-name>enregistrer</servlet-name>
+	 	<url-pattern>/servlet/enregistre</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>vider</servlet-name>
+		<servlet-class>mesCommandes.VidePanier</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>vider</servlet-name>
+		<url-pattern>/servlet/vider</url-pattern>
+	</servlet-mapping>
+</web-app>
