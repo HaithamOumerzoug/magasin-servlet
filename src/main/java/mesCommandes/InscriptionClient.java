@@ -103,5 +103,5 @@ public class InscriptionClient extends HttpServlet {
 	}
 	boolean identique (String recu, String cookie) {
 		return ((recu != null) && (recu.length() >3) && (cookie != null) && (recu.equals(cookie) ));
-		}
+	}
 }
