@@ -60,8 +60,9 @@ public class EnregistrerCommande extends HttpServlet {
 	@SuppressWarnings("deprecation")
 	protected void OuvreBase() {
 		try {
-		Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/magasin?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
+		Class.forName("org.postgresql.Driver").newInstance();
+		Class.forName("com.mysql.cj.jdbc.Driver");
+			connexion = DriverManager.getConnection("jdbc:mysql://us-cdbr-east-03.cleardb.com:3306/heroku_1a52022ae6a967d?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","b53affdf86bea7","14890466");
 			connexion.setAutoCommit(true);
 			stmt = connexion.createStatement();
 		}

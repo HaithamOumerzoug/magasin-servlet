@@ -27,7 +27,7 @@ public class FiltreAutorisation implements Filter {
 		nom = Identification.chercheNom(cookies);
 		if(nom==null) { 
 			// cas ou il n'existe pas
-			hresponse.sendRedirect("/TpServlet/servlet/sinscrire");
+			hresponse.sendRedirect(hrequest.getContextPath()+"/servlet/sinscrire");
 		}
 		else {
 			chain.doFilter(request, response); }

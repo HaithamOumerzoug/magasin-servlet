@@ -66,12 +66,12 @@ public class InscriptionClient extends HttpServlet {
 			 cookie2.setMaxAge(60*60*24);//1 jours
 			 res.addCookie(cookie);
 			 res.addCookie(cookie2);
-			 res.sendRedirect("/TpServlet/servlet/sinscrire");
+			 res.sendRedirect(req.getContextPath()+"/servlet/sinscrire");
 		}
 		else if (identique(nomRecu,nomCookie) && identique(motPasseRecu,motPasseCookie))
 		{
 			// Cas 4 : cas où le nom et le mot passe sont correctes, appel à la servlet achat
-			res.sendRedirect("/TpServlet/servlet/achat");
+			res.sendRedirect(req.getContextPath()+"/servlet/achat");
 			 
 		}
 		 else 

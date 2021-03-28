@@ -15,6 +15,6 @@ public class VidePanier extends HttpServlet{
 		HttpSession session = req.getSession();
 		session.invalidate();
 		req.getSession(false);
-		res.sendRedirect("/TpServlet/servlet/achat");
+		res.sendRedirect(req.getContextPath()+"/servlet/achat");
 	}
 }
