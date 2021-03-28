@@ -5,5 +5,5 @@
 ## Use project :
 ```git
     git clone https://github.com/HaithamOumerzoug/magasin-servlet.git
-    cd JEE-CRUD-101
+    cd magasin-servlet
 ```
